@@ -1,0 +1,7 @@
+.app{
+    scroll-snap-type: y mandatory;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    overflow : scroll;
+  }
