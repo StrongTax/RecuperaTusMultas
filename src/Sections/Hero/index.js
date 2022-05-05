@@ -197,10 +197,12 @@ const HeroSection = () => {
           <SubText>
           No pierdas el tiempo con tus Multas, Analizamos sin costo la posibilidad de defender tus Multas
           </SubText>
+          <a href="#contact" >
           <Button>
           Registra Tu Multa &nbsp;
             <img src={arrow} alt="cta" width="100" height="100" />
           </Button>
+          </a>
          </Lb>
 
         <MobileSvg

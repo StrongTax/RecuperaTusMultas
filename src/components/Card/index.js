@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React  from 'react';
+
 const CARD = styled.div`
   height: calc(9rem + 12vw);
   width: calc(10rem + 12vw);
@@ -44,11 +45,11 @@ const NAME = styled.h2`
 `;
 
 const Card = ({ name, text, image }) => {
-  const Avatar = require(`../../assets/${image}.jpg`).default;
+  const avatar = require(`../../assets/${image}.jpg`).default;
 
   return (
     <CARD>
-      <Image img={Avatar} width="400" height="400" />
+      <Image img={avatar} width="400" height="400" />
       <TEXT>{text}</TEXT>
       <NAME>{name}</NAME>
     </CARD>

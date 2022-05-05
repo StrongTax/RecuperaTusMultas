@@ -115,6 +115,11 @@ const Form = styled.form`
   }
 `;
 
+const Tittle = styled.h1`
+  font-size: calc(1rem + vw);
+  color: #fff;
+`;
+
 const Row = styled.div`
   @media only Screen and (max-width: 40em) {
     display: flex;
@@ -144,17 +149,17 @@ const Contact = () => {
       <Title>Ponte en contacto:</Title>
       {/* <Text>Lorem ipsum dolor sit amet, consectetur adipisicing.</Text> */}
       <Icons>
-        <a href="https://www.facebook.com/">
+        <a href="https://www.facebook.com/" target="_blank">
           {" "}
           <img src={Facebook} alt="Facebook" />
         </a>
-        <a href="https://www.linkedin.com//">
+        <a href="https://www.linkedin.com//" target="_blank">
           <img src={LinkedId} alt="LinkedId" />
         </a>
-        <a href="https://twitter.com/">
+        <a href="https://twitter.com/" target="_blank"> 
           <img src={Twitter} alt="Twitter" />
         </a>
-        <a href="https://www.instagram.com/">
+        <a href="https://www.instagram.com/" target="_blank">
           <img src={Instagram} alt="Instagram" />
         </a>
       </Icons>
@@ -174,7 +179,7 @@ const Contact = () => {
           placeholder="Tu mensaje"
           className="form-control"
         />
-        <label>Adjunta tu Multa</label>
+        <Tittle>Adjunta tu Multa</Tittle>
         <input type="file" name="my_file" placeholder='Ingresa Tu Multa'/> 
         
         <div style={{ margin: "0 auto" }}>

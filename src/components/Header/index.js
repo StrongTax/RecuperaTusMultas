@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import logo from "../../assets/Logopapa.png";
 import React  from 'react';
+
 const Headers = styled.header`
   display: flex;
   justify-content: space-between;
@@ -216,7 +217,7 @@ const Header = () => {
 
         borderRadius: "20px",
 
-        border: "1px solid var(--white)",
+        border: "1px solid var(--purple)",
 
         duration: 1,
         ease: "power1.out",
