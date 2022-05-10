@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -8,10 +7,12 @@ import styled  from "styled-components";
 import img from '../../assets/avatar-2.jpg'
 
 const Title1 = styled.h1`
-
-  font-size: calc(1rem + 1vw);
+  font-size: 14;
   line-height: 1.2;
-  padding: 0.9rem 0;
+  color:#fff;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid var(--pink);
+
 `;
 
 const Topic = styled.span`
@@ -21,8 +22,9 @@ const Topic = styled.span`
   background-color: var(--nav);
   color: var(--white);
   font-weight: 700;
-  font-size: calc(0.4rem + 0.4vw);
+  font-size: 12px;
   padding: 0.5rem 1rem;
+  margin-top: 11px;
   border-radius: 20px;
 `;
 
@@ -36,33 +38,51 @@ const Circle = styled.span`
 `;
 
 const SubText = styled.h1`
-  font-size: calc(0.55rem + 0.55vw);
+  font-size: 13px;
   text-align: justify;
   color: #fff;
-  padding-top: 3px;
+  padding-top: 5px;
   padding-left: 7px;
 `;
 
 const TextBox = styled.div`
     display: flex;
     width: 20rem;
+    padding-top: 7px;
     padding-right: 10px;
 `;
 
 
-const Paper = styled.span`
-    display: flex;
-    margin: 0rem 0rem 4rem 0rem;
+const Paper = styled.div`
+    margin: 4rem 3rem 4rem 3rem;
 
 `;
 
-export default function MediaControlCard() {
+export default function  BlogPost1() {
 
   return (
     <Paper>
     <a href="https://www.google.com/" target="_blank">
-    <Card sx={{ display: 'flex' , borderRadius: '2rem' }} >
-      <Box sx={{ display: 'flex', flexDirection: 'column' , color:'#fff' ,backgroundColor: '#0a0b10'}}>
+
+    <Card sx={{  
+        height: 'calc(20rem)',
+        display: 'flex' , 
+        flexDirection:'column',
+        fontColor:'#fff',
+        alignItems:'center',
+        borderRadius: '2rem' ,
+
+        '@media screen and (min-width: 700px)':{
+            height: 'calc(20rem)',
+            alignItems:'center',
+            display: 'flex' , 
+            borderRadius: '2rem' ,
+            flexDirection:'row', 
+        },
+
+        
+}} >
+      <Box sx={{ display: 'flex' ,flexDirection: 'column' , fontColor:'#fff' ,backgroundColor: '#0a0b10'}}>
         <CardContent sx={{ flex: '1 0 auto' }}>
             <Topic>
                 <Circle/>
@@ -77,11 +97,18 @@ export default function MediaControlCard() {
           </SubText>
           </TextBox>
         </CardContent>
+        
+   
+        
       </Box>
       <CardMedia
         component="img"
         sx={{ 
-            width: 251
+                display: 'flex',
+                width:  330,
+                height: 330,
+
+           
         }}
         image={img}
         alt="Test"

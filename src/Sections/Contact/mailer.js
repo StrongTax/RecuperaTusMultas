@@ -14,6 +14,9 @@ const mailer =() => {
             <label>Message</label>
             <textarea name='message' rows='4'/>
             <input type='submit' name='Send'/>
+
+            <Tittle>Adjunta tu Multa</Tittle>
+            <input type="file" name="my_file" placeholder='Ingresa Tu Multa'/>
         </form>
 </div>
   );

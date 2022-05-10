@@ -5,9 +5,10 @@ import Twitter from "../../assets/twitter-square-brands.svg";
 import Instagram from "../../assets/instagram-square-brands.svg";
 import styled from "styled-components";
 import emailjs from 'emailjs-com'
+import GUploader from './GUploader';
 
 const ContactSection = styled.section`
-  width: 100vw;
+  width: 100%;
   padding: calc(2.5rem + 2.5vw) 0;
   background-color: #0a0b10;
   display: flex;
@@ -23,6 +24,7 @@ const Title = styled.h1`
   font-size: 2rem;
   margin-bottom: 3rem;
   position: relative;
+  
   &::before {
     content: "";
     height: 1px;
@@ -35,6 +37,13 @@ const Title = styled.h1`
     border-bottom: 2px solid var(--pink);
   }
 `;
+
+const SubText = styled.span`
+color: var(--white);
+font-size: calc(.5rem + vw);
+padding: 10px;
+
+`
 
 const Icons = styled.div`
   display: flex;
@@ -60,12 +69,13 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   input {
     padding: 1rem calc(0.5rem + 1vw);
     margin-bottom: 1rem;
     background-color: var(--nav2);
     border: none;
-    border-radius: 4px;
+    border-radius: 2rem;
     color: #eff7f8;
     &:active,
     &:focus {
@@ -86,7 +96,7 @@ const Form = styled.form`
     margin-bottom: 1rem;
     background-color: var(--nav2);
     border: none;
-    border-radius: 4px;
+    border-radius: 1rem;
     color: #eff7f8;
     margin-bottom: 2rem;
     &:focus,
@@ -118,6 +128,8 @@ const Form = styled.form`
 const Tittle = styled.h1`
   font-size: calc(1rem + vw);
   color: #fff;
+  border-bottom: 2px solid var(--pink);
+
 `;
 
 const Row = styled.div`
@@ -149,17 +161,17 @@ const Contact = () => {
       <Title>Ponte en contacto:</Title>
       {/* <Text>Lorem ipsum dolor sit amet, consectetur adipisicing.</Text> */}
       <Icons>
-        <a href="https://www.facebook.com/" target="_blank">
+        <a href="https://www.facebook.com/" target="__target">
           {" "}
           <img src={Facebook} alt="Facebook" />
         </a>
-        <a href="https://www.linkedin.com//" target="_blank">
+        <a href="https://www.linkedin.com//" target="__target">
           <img src={LinkedId} alt="LinkedId" />
         </a>
-        <a href="https://twitter.com/" target="_blank"> 
+        <a href="https://twitter.com/" target=""> 
           <img src={Twitter} alt="Twitter" />
         </a>
-        <a href="https://www.instagram.com/" target="_blank">
+        <a href="https://www.instagram.com/" target="__target">
           <img src={Instagram} alt="Instagram" />
         </a>
       </Icons>
@@ -174,13 +186,16 @@ const Contact = () => {
         </Row>
         <textarea
           name="message"
-          cols="30"
-          rows="2"
-          placeholder="Tu mensaje"
+          cols="42"
+          rows="5"
+          placeholder="De manera detallada describe los sucesos y en caso de ser necesario escribe una nota acerca de tu Multa"
           className="form-control"
         />
-        <Tittle>Adjunta tu Multa</Tittle>
-        <input type="file" name="my_file" placeholder='Ingresa Tu Multa'/> 
+        
+        <Tittle>Adjunta tu Multa </Tittle>
+          <SubText>No te olvides que la Foto o Scan de tu archivo debe ser clara y nitida</SubText>
+          
+        <GUploader/>
         
         <div style={{ margin: "0 auto" }}>
 
@@ -192,6 +207,7 @@ const Contact = () => {
         
           </button>
         </div>
+       
       </Form>
     </ContactSection>
   );

@@ -32,16 +32,15 @@ const Image = styled.div`
 
 const TEXT = styled.h3`
   color: var(--white);
-  padding: 0 calc(1rem + 1vw);
-
+  padding: 0 calc(1.5rem + 1.5vw);
   text-align: center;
-  font-size: calc(0.6rem + 0.5vw);
+  font-size: calc(0.7rem + 0.6vw);
 `;
 
 const NAME = styled.h2`
   color: var(--pink);
-  padding-top: 1rem;
-  font-size: calc(0.5rem + 1vw);
+  padding-bottom: .5rem;
+  font-size: calc(0.6rem + 1.1vw);
 `;
 
 const Card = ({ name, text, image }) => {
@@ -50,8 +49,9 @@ const Card = ({ name, text, image }) => {
   return (
     <CARD>
       <Image img={avatar} width="400" height="400" />
-      <TEXT>{text}</TEXT>
       <NAME>{name}</NAME>
+      <TEXT>{text}</TEXT>
+      
     </CARD>
   );
 };

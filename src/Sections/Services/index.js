@@ -14,11 +14,11 @@ import SvgBlock from "../../components/SvgBlock";
 // const SvgBlock = lazy(() => import("../../components/SvgBlock"));
 
 const ServiceSection = styled.section`
-  width: 100vw;
+  width: 100%;
   /* background-color: #0a0b10; */
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -46,9 +46,11 @@ const Background = styled.div`
 const Title = styled.h1`
   color: var(--white);
   display: inline-block;
+  text-align: center;
   font-size: 2rem;
   margin-top: 4rem;
   position: relative;
+  
   &::before {
     content: "";
     height: 1px;
@@ -67,12 +69,14 @@ const Line = styled.span`
   border-left: 4px solid var(--background);
   height: 15rem;
   margin-top: 2rem;
+  opacity: 80%;
   border-radius: 20px 20px 0 0;
 `;
 
 const Triangle = styled.span`
   width: 0;
   height: 0;
+  opacity: 60%;
   border-left: 1.2rem solid transparent;
   border-right: 1.2rem solid transparent;
   border-top: 2rem solid var(--background);
@@ -145,11 +149,12 @@ const Services = () => {
       document.getElementById("line"),
 
       {
-        height: "15rem",
+        height: "8rem",
       },
       {
-        height: "3rem",
+        height: "1rem",
         duration: 2,
+        opacity: "60%",
         scrollTrigger: {
           trigger: document.getElementById("line"),
           start: "top top+=200",
@@ -172,6 +177,7 @@ const Services = () => {
 
             ease: "power2",
             scrollTrigger: {
+              
               id: `section-${index + 1}`,
               trigger: el,
               start: "top center+=200",
@@ -189,6 +195,7 @@ const Services = () => {
             ease: "power2.inOut",
 
             scrollTrigger: {
+              
               id: `section-${index + 1}`,
               trigger: el.childNodes[1],
               start: "top center",
@@ -271,14 +278,14 @@ const Services = () => {
               scrub: true,
               snap: true,
 
-              // toggleActions: "play none none reverse",
+              //toggleActions: "play none none reverse",
             },
           })
           .from(
             el.childNodes[2],
 
             {
-              y: 400,
+              y: 200,
 
               duration: 2,
 
@@ -305,7 +312,7 @@ const Services = () => {
               scrollTrigger: {
                 id: `section-${index + 1}`,
                 trigger: el,
-                start: "top top+=200",
+                start: "top top+=300",
                 end: "center top+=300",
                 scrub: true,
               },
@@ -323,18 +330,18 @@ const Services = () => {
   return (
     <ServiceSection id="services">
       <Background ref={ref}>
-        <Title className="title">Cual es nuestrto Proceso?</Title>
+        <Title className="title">¿Cual es nuestro Proceso?</Title>
         <Line id="line" />
         <Triangle id="triangle" />
       </Background>
 
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Revision"
-          title={<h1>Nosotros Revismos tu Multa</h1>}
+          topic="Foto!"
+          title={<h1>Envia Tu Multa</h1>}
           subText={
             <h5>
-              Revisamos tu multa minuciosamente
+               Toma una foto de tu multa! <br/> Asegurate que se vea clara y nítida, ya que nuestro equipo trabajara con tu archivo.<br/> Envianos tus archivos en la seccion de abajo
             </h5>
           }
         />
@@ -345,12 +352,11 @@ const Services = () => {
       </Content>
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Aplicacion"
-          title={<h1>Nosotros aplicamos tu multa</h1>}
+          topic="Revisión"
+          title={<h1>Nosotros revisamos tu Multa</h1>}
           subText={
             <h5>
-              We build appropriate solution to develope your website & app with
-              best tools available
+              Una vez recibimos tus archivos los analizamos minuciosamente y nos contactaremos contigo para darte una resolución. 
             </h5>
           }
         />
@@ -362,12 +368,10 @@ const Services = () => {
       <Content>
         <TextBlock
           topic="Solucion!"
-          title={<h1>Y Recuperamos tu Dinero</h1>}
+          title={<h1>Nos contactaremos contigo!</h1>}
           subText={
             <h5>
-              Once your system is online, we will stay on hand to help you use
-              it and provide technical support and maintenance <br /> your
-              business
+              Dependiendo de el tipo de multa y el proceso que es mas eficiente seguir, podremos darte una solucion a tu caso!
             </h5>
           }
         />

@@ -6,8 +6,8 @@ import About from "../Sections/About/index";
 import Services from "../Sections/Services/index";
 import Testimonials from "../Sections/Testimonials/index";
 import Contact from "../Sections/Contact/index";
-import Card from '../components/BlogPost/BlogPost';
-import Card1 from '../components/BlogPost/BlogPost1';
+import BlogPost from '../components/BlogPost/BlogPost.js';
+
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -23,7 +23,7 @@ const Home = () => {
     <Container>
       <HeroSection />
       <About />
-      <Card/>
+      <BlogPost/>
       {/*<Card1/>*/}
       <Services />
       <Testimonials/>

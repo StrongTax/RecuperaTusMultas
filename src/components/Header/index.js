@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import logo from "../../assets/Logopapa.png";
-import React  from 'react';
+import React from "react";
 
 const Headers = styled.header`
   display: flex;
@@ -44,13 +44,13 @@ const Nav = styled.nav`
     display: none;
   }
   a {
-    font-weight: 900;
+    font-weight: 600;
     line-height: 1.5;
     color: var(--white);
     &::after {
       content: "";
       display: block;
-      height: 3px;
+      height: px;
       width: 0;
       background: transparent;
       transition: width 0.5s;
@@ -72,14 +72,15 @@ const Nav = styled.nav`
 
 const Button = styled.button`
   background-color: var(--purple);
-  font-weight: 900;
-  padding: 0.5rem 1rem;
-  border-radius: 15px;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  margin-left: 1rem;
+  border-radius: 2rem;
   color: var(--white);
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
   &:focus {
     transform: scale(0.9);

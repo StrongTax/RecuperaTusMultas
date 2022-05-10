@@ -27,7 +27,7 @@ const Topic = styled.span`
   background-color: var(--nav);
   color: var(--white);
   font-weight: 700;
-  font-size: calc(0.4rem + 0.4vw);
+  font-size: calc(0.5rem + 0.5vw);
   padding: 0.5rem 1rem;
   border-radius: 20px;
 
@@ -46,16 +46,20 @@ const Circle = styled.span`
 
 const Title = styled.div`
   font-size: calc(1rem + 1vw);
+  padding-top: 3px;
   line-height: 1.2;
-  padding: 0.5rem 0;
+  color: #FFF;
+  border-bottom: 2px solid var(--pink);
   @media only Screen and (max-width: 48em) {
     font-size: calc(1rem + 1.5vw);
   }
 `;
 
 const SubText = styled.div`
+padding-top: 0.5rem;
+font-weight: 500;
   font-size: calc(0.65rem + 0.65vw);
-  color: #138A36;
+  color: #fff;
   @media only Screen and (max-width: 48em) {
     font-size: calc(0.55rem + 1.2vw);
   }

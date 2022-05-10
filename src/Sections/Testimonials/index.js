@@ -1,6 +1,5 @@
 import React, { lazy } from "react";
 import styled from "styled-components";
-
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
@@ -13,13 +12,14 @@ const Section = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 5rem 0;
+  padding-top: 5rem;
 `;
 
 const Title = styled.h1`
+  padding-top: 5rem;
   color: #0a0b10;
   display: inline-block;
-  font-size: calc(1rem + 1.5vw);
+  font-size: calc(1.5rem + 2vw);
   margin-top: 1.50rem;
   position: relative;
   &::before {
@@ -36,7 +36,7 @@ const Title = styled.h1`
 `;
 
 const Carousal = styled.div`
-  width: 50vw;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,14 +48,15 @@ const Carousal = styled.div`
     }
   }
   .slick-slider .slick-arrow:before {
-    color: #0a0b10;
+    color: #04E824;
     font-size: 1.9rem;
     @media only Screen and (max-width: 40em) {
       display: none;
     }
   }
   .slick-slider .slick-dots button:before {
-    color: #0a0b10;
+    margin-top: 4rem;
+    color: #138a36;
     font-size: 1.5rem;
   }
   .slick-slide.slick-active {
@@ -81,25 +82,24 @@ const Testimonials = () => {
 
   return (
     <Section>
-      <Title>Nuestras Resenas</Title>
+      <Title>Nuestras Reseñas:</Title>
       <Carousal>
         <Slider {...settings}>
           <Card
-            text="CodeBucks has been essential part of our business. I would definetly
-        recommend CodeBucks. It has been amazing to have them."
-            name="Jenny (CodeCall)"
+            text="Mollit dolor nostrud magna nostrud aute ipsum do aliquip qui esse fugiat officia veniam."
+            name="Ernesto"
             image="avatar-1"
           />
 
           <Card
-            text="CodeBucks has been essential part of our business. I would definetly recommend CodeBucks. It has been amazing to have them."
-            name="Jenny (CodeCall)"
+            text="Laborum nulla incididunt anim veniam culpa eiusmod magna ea."
+            name="Alfredo"
             image="avatar-2"
           />
 
           <Card
-            text="CodeBucks has been essential part of our business. I would definetly recommend CodeBucks. It has been amazing to have them."
-            name="Jenny (CodeCall)"
+            text="Sunt amet tempor voluptate cillum exercitation mollit in officia exercitation amet esse."
+            name="Sofia"
             image="avatar-3"
           />
 

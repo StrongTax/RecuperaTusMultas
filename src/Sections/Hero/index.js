@@ -15,7 +15,7 @@ const move = keyframes`
 `;
 
 const HomeSection = styled.section`
-  width: 100vw;
+  width: 100%;
   height: 45vw;
   background-color: #0a0b10;
   display: flex;
@@ -136,13 +136,14 @@ const Circle = styled.span`
 
 const Title = styled.h1`
   font-size: calc(2rem + 1vw);
+  color: #fff;
   line-height: 1.2;
   padding: 0.5rem 0;
 `;
 
 const SubText = styled.h5`
   font-size: calc(0.55rem + 0.55vw);
-  color: #138A36;
+  color: #fff;
 `;
 
 const Button = styled.button`
@@ -189,13 +190,15 @@ const HeroSection = () => {
 
       <MainContent id="home">
         <Lb id="leftBlock">
+        <a href='https://bufetefiscal.mx/' target="__target">
           <Topic>
             <Circle />
             <span>By H.E.R.A</span>
           </Topic>
-          <Title>Recuperamos Tus Multas</Title>
+          </a>
+          <Title>Recupera Tus Multas</Title>
           <SubText>
-          No pierdas el tiempo con tus Multas, Analizamos sin costo la posibilidad de defender tus Multas
+            No pierdas el tiempo con tus Multas, Nosotros nos encargaremos de analizar sin costo la posibilidad de defender tus Multas
           </SubText>
           <a href="#contact" >
           <Button>
