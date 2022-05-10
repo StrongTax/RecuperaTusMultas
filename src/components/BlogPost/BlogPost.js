@@ -64,7 +64,7 @@ export default function BlogPost() {
   return (
     <div>
     <Paper>
-    <a href="https://www.google.com/" target="__target">
+    <a href="https://blog.recuperatusmultas.com/" target="__target">
 
     <Card sx={{  
         height: 'calc(20rem)',
