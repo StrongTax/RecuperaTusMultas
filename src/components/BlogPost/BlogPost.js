@@ -65,7 +65,7 @@ const Paper = styled.div`
 
 export default function BlogPost() {
   return (
-    <div data-aos="fade-up" data-aos-duration="1500">
+    <div data-aos="fade-up" data-aos-duration="2200">
       <Paper>
         <a href="https://blog.recuperatusmultas.com/" target="__target">
           <Card

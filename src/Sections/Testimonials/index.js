@@ -87,7 +87,7 @@ const Testimonials = () => {
   };
 
   return (
-    <Section data-aos="fade-left" data-aos-duration="1500">
+    <Section data-aos="fade-left" data-aos-duration="2200">
       <Title>Nuestras Reseñas:</Title>
       <Carousal>
         <Slider {...settings}>

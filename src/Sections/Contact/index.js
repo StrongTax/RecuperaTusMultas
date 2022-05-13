@@ -167,7 +167,7 @@ const Contact = () => {
       .catch((err) => console.log(err));
   }
   return (
-    <ContactSection id="contact" data-aos="fade-right" data-aos-duration="1500">
+    <ContactSection id="contact" data-aos="fade-right" data-aos-duration="2200">
       <Title>Ponte en contacto:</Title>
       {/* <Text>Lorem ipsum dolor sit amet, consectetur adipisicing.</Text> */}
       <Icons>

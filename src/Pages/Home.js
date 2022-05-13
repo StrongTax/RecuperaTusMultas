@@ -6,8 +6,8 @@ import Services from "../Sections/Services/index";
 import Testimonials from "../Sections/Testimonials/index";
 import Contact from "../Sections/Contact/index";
 import BlogPost from "../components/BlogPost/BlogPost.js";
-
 import styled from "styled-components";
+
 
 const Container = styled.div`
   display: flex;

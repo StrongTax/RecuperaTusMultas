@@ -189,7 +189,7 @@ const HeroSection = () => {
       </Blobs>
 
       <MainContent id="home">
-        <Lb id="leftBlock" data-aos="fade-left" data-aos-duration="1800">
+        <Lb id="leftBlock" data-aos="fade-left" data-aos-duration="2200">
           <a href="https://bufetefiscal.mx/" target="__target">
             <Topic>
               <Circle />

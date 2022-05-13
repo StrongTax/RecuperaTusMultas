@@ -132,7 +132,7 @@ const About = () => {
     <AboutSection id="about">
       <Waves src={wave} alt="" />
       <div data-aos="fade-right"
-     data-aos-duration="1800">
+     data-aos-duration="2200">
         <Hand>
         <img src={hand} alt="" />
       </Hand>
