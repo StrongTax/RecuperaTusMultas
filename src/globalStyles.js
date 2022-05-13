@@ -37,7 +37,10 @@ html{
         outline: 0;
         background: var(--background);
 
-        overflow-x: hidden;
+                    overflow-x: hidden;
+
+
+
     }
     h1,
     h2,

@@ -1,5 +1,5 @@
 // This is HeroSection component, Main top section of website
-import React from 'react';
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 import pinkBlob from "../../assets/blobPink.png";
@@ -189,24 +189,25 @@ const HeroSection = () => {
       </Blobs>
 
       <MainContent id="home">
-        <Lb id="leftBlock">
-        <a href='https://bufetefiscal.mx/' target="__target">
-          <Topic>
-            <Circle />
-            <span>By H.E.R.A</span>
-          </Topic>
+        <Lb id="leftBlock" data-aos="fade-left" data-aos-duration="1800">
+          <a href="https://bufetefiscal.mx/" target="__target">
+            <Topic>
+              <Circle />
+              <span>By H.E.R.A</span>
+            </Topic>
           </a>
           <Title>Recupera Tus Multas</Title>
           <SubText>
-            No pierdas el tiempo con tus Multas, Nosotros nos encargaremos de analizar sin costo la posibilidad de defender tus Multas
+            No pierdas el tiempo con tus Multas, Nosotros nos encargaremos de
+            analizar sin costo la posibilidad de defender tus Multas
           </SubText>
-          <a href="#contact" >
-          <Button>
-          Registra Tu Multa &nbsp;
-            <img src={arrow} alt="cta" width="100" height="100" />
-          </Button>
+          <a href="#contact">
+            <Button>
+              Registra Tu Multa &nbsp;
+              <img src={arrow} alt="cta" width="100" height="100" />
+            </Button>
           </a>
-         </Lb>
+        </Lb>
 
         <MobileSvg
           src={Mobile}

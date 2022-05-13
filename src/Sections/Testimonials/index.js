@@ -7,6 +7,12 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 const Card = lazy(() => import("../../components/Card/index"));
 
 const Section = styled.div`
+          overflow-x: hidden;
+
+
+          overflow-y: hidden;
+
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +26,7 @@ const Title = styled.h1`
   color: #0a0b10;
   display: inline-block;
   font-size: calc(1.5rem + 2vw);
-  margin-top: 1.50rem;
+  margin-top: 1.5rem;
   position: relative;
   &::before {
     content: "";
@@ -36,19 +42,19 @@ const Title = styled.h1`
 `;
 
 const Carousal = styled.div`
-  width: 80vw;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 10rem;
   @media only Screen and (max-width: 40em) {
-    width: 90vw;
+    width: 90%;
     .slick-slider .slick-arrow {
       display: none;
     }
   }
   .slick-slider .slick-arrow:before {
-    color: #04E824;
+    color: #04e824;
     font-size: 1.9rem;
     @media only Screen and (max-width: 40em) {
       display: none;
@@ -81,7 +87,7 @@ const Testimonials = () => {
   };
 
   return (
-    <Section>
+    <Section data-aos="fade-left" data-aos-duration="1500">
       <Title>Nuestras Reseñas:</Title>
       <Carousal>
         <Slider {...settings}>

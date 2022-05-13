@@ -193,14 +193,10 @@ const Header = () => {
         left: "0",
         right: "0",
         padding: "1rem 2.5rem",
-
         borderRadius: "0 0 50px 50px",
-
         border: "2px solid var(--white)",
-
         duration: 1,
         ease: "power1.out",
-
         scrollTrigger: {
           trigger: element,
           start: "bottom+=200 top",
@@ -215,14 +211,10 @@ const Header = () => {
         left: "3rem",
         right: "3rem",
         padding: "1.5rem 2rem",
-
         borderRadius: "20px",
-
         border: "1px solid var(--purple)",
-
         duration: 1,
         ease: "power1.out",
-
         scrollTrigger: {
           trigger: element,
           start: "bottom+=300 top",

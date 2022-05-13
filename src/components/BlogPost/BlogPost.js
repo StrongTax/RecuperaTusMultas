@@ -1,20 +1,18 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import styled  from "styled-components";
-import img from '../../assets/avatar-1.jpg'
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import styled from "styled-components";
+import img from "../../assets/avatar-1.jpg";
 
 const Title1 = styled.h1`
   font-size: 14;
   line-height: 1.2;
-  color:#fff;
+  color: #fff;
   padding: 0.2rem;
   border-bottom: 2px solid var(--pink);
-
 `;
-
 
 const Topic = styled.span`
   display: flex;
@@ -47,81 +45,89 @@ const SubText = styled.h1`
 `;
 
 const TextBox = styled.div`
-    display: flex;
-    width: 20rem;
-    padding-top: 7px;
-    padding-right: 10px;
+  display: flex;
+  width: 20rem;
+  padding-top: 7px;
+  padding-right: 10px;
 `;
 
-
 const Paper = styled.div`
-    margin: 4rem 3rem 4rem 3rem;
+          overflow-x: hidden;
 
+
+
+          overflow-y: hidden;
+
+
+
+  margin: 4rem 3rem 4rem 3rem;
 `;
 
 export default function BlogPost() {
-
   return (
-    <div>
-    <Paper>
-    <a href="https://blog.recuperatusmultas.com/" target="__target">
+    <div data-aos="fade-up" data-aos-duration="1500">
+      <Paper>
+        <a href="https://blog.recuperatusmultas.com/" target="__target">
+          <Card
+            sx={{
+              height: "calc(20rem)",
+              display: "flex",
+              flexDirection: "column",
+              fontColor: "#fff",
+              alignItems: "center",
+              borderRadius: "2rem",
 
-    <Card sx={{  
-        height: 'calc(20rem)',
-        display: 'flex' , 
-        flexDirection:'column',
-        fontColor:'#fff',
-        alignItems:'center',
-        borderRadius: '2rem' ,
-
-        '@media screen and (min-width: 700px)':{
-            height: 'calc(20rem)',
-            alignItems:'center',
-            display: 'flex' , 
-            borderRadius: '2rem' ,
-            flexDirection:'row', 
-        },
-
-        
-}} >
-      <Box sx={{ display: 'flex' ,flexDirection: 'column' , fontColor:'#fff' ,backgroundColor: '#0a0b10'}}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-           
-          <Title1>
-            Live From Space
-          </Title1>
-          <TextBox>
-          <SubText>
-            VeniamUllamco amet tempor eu occaecat laboris pariatur enim. Commodo pariatur in laborum nulla id officia occaecat veniam. Consequat Lorem duis non non id officia et qui ad reprehenderit cillum. Magna minim labore velit anim ipsum commodo sunt amet. Voluptate duis ullamco quis exercitation laboris do consectetur labore consectetur incididunt do id. Laboris dolor dolor anim ex proident incididunt consectetur nisi. consequat nostrud nulla consectetur minim occaecat irure velit proident ipsum.
-          </SubText>
-          </TextBox>
-          <Topic>
-                <Circle/>
-                <span>Ir al Blog!</span>
-            </Topic>
-        </CardContent>
-        
-   
-        
-      </Box>
-      <CardMedia
-        component="img"
-        sx={{ 
-                display: 'flex',
-                width:  330,
+              "@media screen and (min-width: 700px)": {
+                height: "calc(20rem)",
+                alignItems: "center",
+                display: "flex",
+                borderRadius: "2rem",
+                flexDirection: "row",
+              },
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                fontColor: "#fff",
+                backgroundColor: "#0a0b10",
+              }}
+            >
+              <CardContent sx={{ flex: "1 0 auto" }}>
+                <Title1>Live From Space</Title1>
+                <TextBox>
+                  <SubText>
+                    VeniamUllamco amet tempor eu occaecat laboris pariatur enim.
+                    Commodo pariatur in laborum nulla id officia occaecat
+                    veniam. Consequat Lorem duis non non id officia et qui ad
+                    reprehenderit cillum. Magna minim labore velit anim ipsum
+                    commodo sunt amet. Voluptate duis ullamco quis exercitation
+                    laboris do consectetur labore consectetur incididunt do id.
+                    Laboris dolor dolor anim ex proident incididunt consectetur
+                    nisi. consequat nostrud nulla consectetur minim occaecat
+                    irure velit proident ipsum.
+                  </SubText>
+                </TextBox>
+                <Topic>
+                  <Circle />
+                  <span>Ir al Blog!</span>
+                </Topic>
+              </CardContent>
+            </Box>
+            <CardMedia
+              component="img"
+              sx={{
+                display: "flex",
+                width: 330,
                 height: 330,
-
-           
-        }}
-        image={img}
-        alt="Test"
-      />
-    </Card>
-    
-    </a>
-    </Paper>
+              }}
+              image={img}
+              alt="Test"
+            />
+          </Card>
+        </a>
+      </Paper>
     </div>
   );
-
-  
 }

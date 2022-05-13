@@ -1,13 +1,17 @@
-import React  from 'react';
+import React from "react";
 import Facebook from "../../assets/facebook-square-brands.svg";
 import LinkedId from "../../assets/linkedin-brands.svg";
+import WhatsApp from "../../assets/whatsapp-square-brands.png";
 import Twitter from "../../assets/twitter-square-brands.svg";
-import Instagram from "../../assets/instagram-square-brands.svg";
 import styled from "styled-components";
-import emailjs from 'emailjs-com'
-import GUploader from './GUploader';
+import emailjs from "emailjs-com";
+import GUploader from "./GUploader";
 
 const ContactSection = styled.section`
+  overflow-x: hidden;
+
+  overflow-y: hidden;
+
   width: 100%;
   padding: calc(2.5rem + 2.5vw) 0;
   background-color: #0a0b10;
@@ -24,7 +28,7 @@ const Title = styled.h1`
   font-size: 2rem;
   margin-bottom: 3rem;
   position: relative;
-  
+
   &::before {
     content: "";
     height: 1px;
@@ -38,12 +42,14 @@ const Title = styled.h1`
   }
 `;
 
-const SubText = styled.span`
-color: var(--white);
-font-size: calc(.5rem + vw);
-padding: 10px;
-
-`
+const SubText = styled.h4`
+  color: var(--white);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: calc(0.5rem + vw);
+  padding: 1rem;
+`;
 
 const Icons = styled.div`
   display: flex;
@@ -71,7 +77,7 @@ const Form = styled.form`
   justify-content: center;
   align-items: center;
   input {
-    padding: 1rem calc(0.5rem + 1vw);
+    padding: 1rem 5.0rem 1rem 1rem;
     margin-bottom: 1rem;
     background-color: var(--nav2);
     border: none;
@@ -84,6 +90,7 @@ const Form = styled.form`
       background-color: var(--nav);
     }
     &::placeholder {
+  
       color: #eff7f8;
       opacity: 0.6;
     }
@@ -92,13 +99,12 @@ const Form = styled.form`
     }
   }
   textarea {
-    padding: 1rem calc(0.5rem + 1vw);
-    margin-bottom: 1rem;
+    padding: 1.2rem 2.5rem 4rem 2.5rem;
     background-color: var(--nav2);
     border: none;
     border-radius: 1rem;
     color: #eff7f8;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     &:focus,
     &:active {
       background-color: var(--nav);
@@ -108,7 +114,9 @@ const Form = styled.form`
       opacity: 0.6;
     }
   }
+
   button {
+    margin-top: 1rem;
     padding: 0.8rem 2rem;
     background-color: var(--white);
     border-radius: 20px;
@@ -129,7 +137,6 @@ const Tittle = styled.h1`
   font-size: calc(1rem + vw);
   color: #fff;
   border-bottom: 2px solid var(--pink);
-
 `;
 
 const Row = styled.div`
@@ -144,20 +151,23 @@ const Row = styled.div`
   }
 `;
 const Contact = () => {
-  function sendEmail(e){
+  function sendEmail(e) {
     e.preventDefault();
-    
-    emailjs.sendForm(
-    'service_5hz4549', 
-    'template_i2hd89h',
-    e.target,
-    'rqBN9xJBwW9PwOH9_').then(res=>{
-    console.log(res);
-      
-    }).catch(err => console.log(err));
+
+    emailjs
+      .sendForm(
+        "service_5hz4549",
+        "template_i2hd89h",
+        e.target,
+        "rqBN9xJBwW9PwOH9_"
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   }
   return (
-    <ContactSection id="contact">
+    <ContactSection id="contact" data-aos="fade-right" data-aos-duration="1500">
       <Title>Ponte en contacto:</Title>
       {/* <Text>Lorem ipsum dolor sit amet, consectetur adipisicing.</Text> */}
       <Icons>
@@ -168,46 +178,53 @@ const Contact = () => {
         <a href="https://www.linkedin.com//" target="__target">
           <img src={LinkedId} alt="LinkedId" />
         </a>
-        <a href="https://twitter.com/" target=""> 
+        <a href="https://twitter.com/" target="">
           <img src={Twitter} alt="Twitter" />
         </a>
-        <a href="https://www.instagram.com/" target="__target">
-          <img src={Instagram} alt="Instagram" />
+        <a href="https://www.whatsapp.com/" target="__target">
+          <img src={WhatsApp} alt="WhatsApp" />
         </a>
       </Icons>
-      <Form onSubmit={sendEmail} >
+      <Form onSubmit={sendEmail}>
         <Row>
-        <label></label>
-            <input type="text" name="name" placeholder='Tu Nombre' className="form-control"/>
+          <label></label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Tu Nombre"
+            className="form-control"
+          />
 
-        <label></label>
-            <input type="email" name="user_email" placeholder='Tu Email' className="form-control"/>
-
+          <label></label>
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Tu Email"
+            className="form-control"
+          />
         </Row>
         <textarea
-          name="message"
-          cols="42"
-          rows="5"
           placeholder="De manera detallada describe los sucesos y en caso de ser necesario escribe una nota acerca de tu Multa"
+          name="message"
           className="form-control"
         />
-        
-        <Tittle>Adjunta tu Multa </Tittle>
-          <SubText>No te olvides que la Foto o Scan de tu archivo debe ser clara y nitida</SubText>
-          
-        <GUploader/>
-        
-        <div style={{ margin: "0 auto" }}>
 
-        <button type='submit' name='Send' className="form-control btn btn-primary"
-         
-       
-      >
-        Enviar!
-        
+        <Tittle>Adjunta tu Multa </Tittle>
+        <SubText>
+          No te olvides que la Foto o Scan de tu archivo debe ser clara y nitida
+        </SubText>
+
+        <GUploader />
+
+        <div style={{ margin: "0 auto" }}>
+          <button
+            type="submit"
+            name="Send"
+            className="form-control btn btn-primary"
+          >
+            Enviar!
           </button>
         </div>
-       
       </Form>
     </ContactSection>
   );

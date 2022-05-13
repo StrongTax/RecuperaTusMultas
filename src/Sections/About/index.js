@@ -12,7 +12,15 @@ const move = keyframes`
 `;
 
 const AboutSection = styled.section`
-  width: 100vw;
+              overflow-x: hidden;
+
+
+
+              overflow-y: hidden;
+
+
+
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -20,7 +28,7 @@ const AboutSection = styled.section`
   align-items: center;
 `;
 const Waves = styled.img`
-  width: 100%;
+  width: 101%;
   height: auto;
   position: absolute;
   top: -1rem;
@@ -123,7 +131,9 @@ const About = () => {
   return (
     <AboutSection id="about">
       <Waves src={wave} alt="" />
-      <Hand>
+      <div data-aos="fade-right"
+     data-aos-duration="1800">
+        <Hand>
         <img src={hand} alt="" />
       </Hand>
       <Main>
@@ -152,7 +162,7 @@ const About = () => {
           </AboutText>
         </Content>
       </Main>
-
+      </div>
   
 
     </AboutSection>
