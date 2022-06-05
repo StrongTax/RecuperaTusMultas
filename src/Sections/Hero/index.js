@@ -212,7 +212,7 @@ const HeroSection = () => {
           <br />
           <Title>Recupera Tus Multas</Title>
           <br />
-          <SubText>Multas viales:</SubText>
+          <SubText>Multas</SubText>
           <Type>
             <Typewriter
             onInit={(typewriter) => {
