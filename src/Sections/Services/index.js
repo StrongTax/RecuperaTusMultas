@@ -88,14 +88,14 @@ const Triangle = styled.span`
 `;
 
 const Content = styled.div`
+  margin-left: 15rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: justify;
   margin-top: 10rem;
-  margin-bottom:-25rem;
   padding-bottom:15rem;
-
   /* margin-bottom: 10rem; */
   position: relative;
   @media only Screen and (max-width: 64em) {
@@ -118,7 +118,7 @@ const Content = styled.div`
 const OBJ = styled.div`
   position: absolute;
   top: 20%;
-  right: 0%;
+  right: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
