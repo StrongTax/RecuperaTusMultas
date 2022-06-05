@@ -47,11 +47,11 @@ const Footer = () => {
     <FOOTER>
       <LeftText>
         © 2022 Pagina Propiedad de{" "}
-        <a href="https://www.bufetefiscal.mx">HERA</a>
+        <a href="https://www.bufetefiscal.mx" style={{color: "Lime"}}>HERA</a>
       </LeftText>
 
       <RightText>
-        Numero Telefonico <a href="tel:+525545932220"> +525545932220</a>
+        Numero Telefonico &nbsp; <a href="tel:+525545932220" style={{color: "Lime"}}> +525545932220</a>
       </RightText>
     </FOOTER>
   );

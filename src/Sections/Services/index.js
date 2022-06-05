@@ -32,36 +32,6 @@ color-text: #04e824;
   }
 `;
 
-const Button = styled.button`
-  display: flex;
-  background-color: var(--purple);
-  font-weight: 600;
-  margin-top: 1rem;
-  padding: 0.7rem 1rem;
-  margin-left: 1rem;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
-  border-radius: 2rem;
-  color: var(--white);
-  cursor: pointer;
-  transition: all 0.2s;
-  &:hover {
-    transform: scale(1.2);
-  }
-  &:focus {
-    transform: scale(0.9);
-  }
-  @media only Screen and (max-width: 40em) {
-    font-size: 1.2rem;
-    &:hover {
-      transform: none;
-    }
-    &:focus {
-      transform: none;
-    }
-  }
-`;
 
 const Background = styled.div`
   display: flex;
@@ -373,20 +343,22 @@ const Services = () => {
 
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Privacidad y Confidencialidad"
+          topic="1"
           title={
             <h4>
-              Consulta y Autoriza nuestro aviso de privacidad y confidencialidad
+              Aviso de Privacidad
             </h4>
           }
           subText={
             <h4>
+              Consulta y Autoriza nuestro <br/>
+              <a href="#" style={{color: "Lime"}}> Aviso de Privacidad  </a>
               Recupera Tus Multas tiene un gran compromiso <br />
               con sus Usuarios y su Privacidad
             </h4>
           }
         >
-          <Button> Aviso de Privacidad</Button>
+          
         </TextBlock>
 
         <OBJ>
@@ -396,7 +368,7 @@ const Services = () => {
       </Content>
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Escaneo"
+          topic="2"
           title={<h4>Sube tu multa</h4>}
           subText={
             <h4>
@@ -416,7 +388,7 @@ const Services = () => {
 
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Revisión"
+          topic="3"
           title={<h4>Revisáremos tu Multa!</h4>}
           subText={
             <h4>
@@ -434,7 +406,7 @@ const Services = () => {
 
       <Content>
         <TextBlock
-          topic="Solucion!"
+          topic="4"
           title={<h4>Nos contactáremos contigo</h4>}
           subText={
             <h4>

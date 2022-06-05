@@ -1,6 +1,7 @@
 // This is HeroSection component, Main top section of website
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import Typewriter from "typewriter-effect";
 
 import pinkBlob from "../../assets/blobPink.png";
 import purpleBlob from "../../assets/blob purple.png";
@@ -78,13 +79,14 @@ const WhiteBlob = styled.div`
 
 const MainContent = styled.div`
   display: flex;
-  margin-top:2rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
   justify-content: center;
   align-text: justify;
   align-items: center;
   width: 85vw;
   @media only Screen and (max-width: 48em) {
-    margin-top:-2rem;
+    margin-top: -2rem;
 
     flex-direction: column;
     justify-content: center;
@@ -104,10 +106,11 @@ const MobileSvg = styled.img`
     position: absolute;
     bottom: 0;
     width: calc(30% + 20vw);
-    opacity: 0.5;
+    opacity: 0.3;
   }
   @media only Screen and (max-width: 40em) {
-    display: none;
+    display: flex;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -151,6 +154,17 @@ const SubText = styled.h4`
   }
 `;
 
+const Type = styled.h4`
+  padding-left: 0.2rem;
+  font-size: calc(0.9rem + 0.9vw);
+  color: #18FF6D;
+  align-text: justify;
+  @media only Screen and (max-width: 48em) {
+    font-size: calc(1.3rem + 1.3vw);
+    align-text: justify;
+  }
+`;
+
 const Button = styled.button`
   background-color: var(--white);
   color: #0a0b10;
@@ -158,7 +172,7 @@ const Button = styled.button`
   margin-top: 1rem;
   border-radius: 20px;
   cursor: pointer;
-  font-size: calc(0.5rem + 0.5vw);
+  font-size: calc(0.7rem + 0.7vw);
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -195,16 +209,39 @@ const HeroSection = () => {
 
       <MainContent id="home">
         <Lb id="leftBlock" data-aos="fade-left" data-aos-duration="2200">
-          <Title>
-            Recupera
-            <br />
-            Tus Multas
-          </Title>
+          <br />
+          <Title>Recupera Tus Multas</Title>
+          <br />
+          <SubText>Multas viales:</SubText>
+          <Type>
+            <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+            .pauseFor(2500)
+            }}
+             options={{
+              pauseFor: 2500,
+              strings: ['Federales', 'Estatales', 'Municipales'],
+              
+              autoStart: true,
+              loop: true,
+            }}
+            />
+          </Type>
+
           <SubText>
-            Federales, <br/> Estatales, y <br/>Municipales <br/><br/> &nbsp;&nbsp;&nbsp;¡Nosotros las recuperamos!
-            <br/><br/>
-            <Subtitle><h3>¡Sabía usted que el 90 % de las multas en México son impuestas ilegalmente!</h3></Subtitle>
+            <br /> &nbsp;&nbsp;&nbsp;¡Nosotros las recuperamos!
+            <br />
+            <br />
           </SubText>
+          <Subtitle>
+            <h3>
+              ¡Sabía usted que el 90 % de las multas en México son impuestas
+              ilegalmente!
+            </h3>
+            <br/>
+          </Subtitle>
+
           <a href="#contact">
             <Button>
               Registra Tu Multa &nbsp;

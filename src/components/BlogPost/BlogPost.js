@@ -57,9 +57,10 @@ const Paper = styled.div`
   overflow-x: hidden;
 
   overflow-y: hidden;
-
+  
   margin: 4rem 3rem 4rem 3rem;
-`;
+
+  `;
 
 export default function BlogPost() {
   return (
@@ -67,7 +68,7 @@ export default function BlogPost() {
       <Paper>
         <a href="https://blog.recuperatusmultas.com/" target="__target">
           <Card
-            sx={{
+            sx={{        
               height: "calc(40rem)",
               display: "flex",
               flexDirection: "column",

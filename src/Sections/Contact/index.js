@@ -233,7 +233,7 @@ const Contact = () => {
       <SubText>
         Al dar Click en Enviar estas aceptando el{" "}
         <form action="/Privacy" class="inline">
-          <a href="/Privacy">Aviso de Privacidad</a>
+          <a href="/Privacy" style={{color: "Lime"}}>Aviso de Privacidad</a>
         </form>
       </SubText>
     </ContactSection>

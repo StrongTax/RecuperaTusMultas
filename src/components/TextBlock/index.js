@@ -28,12 +28,12 @@ const Topic = styled.span`
   background-color: var(--nav);
   color: var(--white);
   font-weight: 700;
-  font-size: calc(0.5rem + 0.5vw);
+  font-size: calc(0.7rem + 0.7vw);
   padding: 0.5rem 1rem;
   border-radius: 20px;
 
   @media only Screen and (max-width: 48em) {
-    font-size: calc(0.4rem + 0.8vw);
+    font-size: calc(0.7rem + 0.7vw);
   }
 `;
 const Circle = styled.span`
