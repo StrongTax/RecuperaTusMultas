@@ -22,8 +22,9 @@ const Lb = styled.div`
 const Topic = styled.span`
   display: flex;
   align-items: center;
+  
   justify-content: center;
-
+  margin-bottom: 1rem;
   background-color: var(--nav);
   color: var(--white);
   font-weight: 700;
@@ -48,6 +49,7 @@ const Title = styled.div`
   font-size: calc(1rem + 1vw);
   padding-top: 3px;
   line-height: 1.2;
+  text-align: justify;
   color: #FFF;
   border-bottom: 2px solid var(--pink);
   @media only Screen and (max-width: 48em) {
@@ -58,6 +60,7 @@ const Title = styled.div`
 const SubText = styled.div`
 padding-top: 0.5rem;
 font-weight: 500;
+text-align: justify;
   font-size: calc(0.65rem + 0.65vw);
   color: #fff;
   @media only Screen and (max-width: 48em) {

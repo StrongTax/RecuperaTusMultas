@@ -6,13 +6,14 @@ import logo from "../../assets/Logopapa.png";
 import React from "react";
 
 const Headers = styled.header`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5rem;
   background-color: var(--nav);
   color: var(--white);
-  position: relative;
+  position: fixed;
   z-index: 500;
   @media only Screen and (max-width: 64em) {
     padding: 0.5rem 3rem;
@@ -35,7 +36,7 @@ const Logo = styled.a`
 
 const Nav = styled.nav`
   width: 25rem;
-  max-width: 40rem;
+  max-with: 40rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -171,7 +172,7 @@ const Header = () => {
     const element = document.getElementById(id);
     element.scrollIntoView({
       behavior: "smooth",
-      block: "end",
+      block: "start",
       inline: "nearest",
     });
   };
@@ -186,43 +187,7 @@ const Header = () => {
 
     const mq = window.matchMedia("(max-width: 40em)");
     // console.log("mq", mq);
-    if (mq.matches) {
-      gsap.to(element, {
-        position: "fixed",
-        top: "0",
-        left: "0",
-        right: "0",
-        padding: "1rem 2.5rem",
-        borderRadius: "0 0 50px 50px",
-        border: "2px solid var(--white)",
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: element,
-          start: "bottom+=200 top",
-          end: "+=100",
-          scrub: true,
-        },
-      });
-    } else {
-      gsap.to(element, {
-        position: "fixed",
-        top: "1rem",
-        left: "3rem",
-        right: "3rem",
-        padding: "1.5rem 2rem",
-        borderRadius: "20px",
-        border: "1px solid var(--purple)",
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: element,
-          start: "bottom+=300 top",
-          end: "+=250",
-          scrub: true,
-        },
-      });
-    }
+    
   }, []);
 
   return (

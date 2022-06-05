@@ -16,17 +16,18 @@ const move = keyframes`
 
 const HomeSection = styled.section`
   width: 100%;
-  height: 45vw;
+  height: 40%;
   background-color: #0a0b10;
   display: flex;
   justify-content: center;
   position: relative;
   @media only Screen and (max-width: 48em) {
-    height: 70vw;
+    height: 50vh;
     display: block;
   }
   @media only Screen and (max-width: 420px) {
     height: auto;
+    height: 70vh;
     padding-bottom: 2rem;
   }
 `;
@@ -37,6 +38,21 @@ const Blobs = styled.div`
   right: 0;
   @media only Screen and (max-width: 48em) {
     opacity: 0.5;
+  }
+`;
+
+const Subtitle = styled.h3`
+color: #04e824;
+color-text: #04e824; 
+font-size: calc(1rem + 1vw);
+
+align-text: justify;
+@media only Screen and (max-width: 48em) {
+  font-size: calc(0.75rem + 0.75vw);
+}
+@media only Screen and (max-width: 420px) {
+  font-size: calc(0.75rem + 0.75vw);
+}
   }
 `;
 
@@ -62,10 +78,14 @@ const WhiteBlob = styled.div`
 
 const MainContent = styled.div`
   display: flex;
+  margin-top:2rem;
   justify-content: center;
+  align-text: justify;
   align-items: center;
-  width: 70vw;
+  width: 85vw;
   @media only Screen and (max-width: 48em) {
+    margin-top:-2rem;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -113,37 +133,22 @@ const Lb = styled.div`
   }
 `;
 
-const Topic = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--nav);
-  color: var(--white);
-  font-weight: 700;
-  font-size: calc(0.4rem + 0.4vw);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-`;
-
-const Circle = styled.span`
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: var(--purple);
-  margin-right: 0.5rem;
-`;
-
 const Title = styled.h1`
   font-size: calc(2rem + 1vw);
   color: #fff;
   line-height: 1.2;
-  padding: 0.5rem 0;
+  padding: 0.2rem 0;
 `;
 
-const SubText = styled.h5`
-  font-size: calc(0.55rem + 0.55vw);
+const SubText = styled.h4`
+  padding-left: 0.2rem;
+  font-size: calc(0.75rem + 0.75vw);
   color: #fff;
+  align-text: justify;
+  @media only Screen and (max-width: 48em) {
+    font-size: calc(0.95rem + 0.95vw);
+    align-text: justify;
+  }
 `;
 
 const Button = styled.button`
@@ -190,16 +195,15 @@ const HeroSection = () => {
 
       <MainContent id="home">
         <Lb id="leftBlock" data-aos="fade-left" data-aos-duration="2200">
-          <a href="https://bufetefiscal.mx/" target="__target">
-            <Topic>
-              <Circle />
-              <span>By H.E.R.A</span>
-            </Topic>
-          </a>
-          <Title>Recupera Tus Multas</Title>
+          <Title>
+            Recupera
+            <br />
+            Tus Multas
+          </Title>
           <SubText>
-            No pierdas el tiempo con tus Multas, Nosotros nos encargaremos de
-            analizar sin costo la posibilidad de defender tus Multas
+            Federales, <br/> Estatales, y <br/>Municipales <br/><br/> &nbsp;&nbsp;&nbsp;¡Nosotros las recuperamos!
+            <br/><br/>
+            <Subtitle><h3>¡Sabía usted que el 90 % de las multas en México son impuestas ilegalmente!</h3></Subtitle>
           </SubText>
           <a href="#contact">
             <Button>

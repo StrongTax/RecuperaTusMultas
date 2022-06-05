@@ -7,10 +7,11 @@ import Testimonials from "../Sections/Testimonials/index";
 import Contact from "../Sections/Contact/index";
 import BlogPost from "../components/BlogPost/BlogPost.js";
 import styled from "styled-components";
-
+import Footer from "../components/Footer";
 
 const Container = styled.div`
   display: flex;
+  padding-top: 4rem;
   overflow-x: hidden;
   overflow-y: hidden;
   flex-direction: column;
@@ -29,6 +30,7 @@ const Home = () => {
       <Services />
       <Testimonials />
       <Contact />
+      <Footer/>
     </Container>
   );
 };

@@ -77,20 +77,18 @@ const Form = styled.form`
   justify-content: center;
   align-items: center;
   input {
-    padding: 1rem 5.0rem 1rem 1rem;
+    padding: 1rem 5rem 1rem 1rem;
     margin-bottom: 1rem;
     background-color: var(--nav2);
     border: none;
     border-radius: 2rem;
     color: #eff7f8;
-    &:active,
-    &:focus {
+    &:active {
       border: none;
       outline: none;
       background-color: var(--nav);
     }
     &::placeholder {
-  
       color: #eff7f8;
       opacity: 0.6;
     }
@@ -99,7 +97,10 @@ const Form = styled.form`
     }
   }
   textarea {
-    padding: 1.2rem 2.5rem 4rem 2.5rem;
+    align-items: center;
+    justify-text: center;
+    justify-content: center;
+    padding: 0.7rem 2rem 5rem 1rem;
     background-color: var(--nav2);
     border: none;
     border-radius: 1rem;
@@ -140,13 +141,11 @@ const Tittle = styled.h1`
 `;
 
 const Row = styled.div`
-  @media only Screen and (max-width: 40em) {
-    display: flex;
-    flex-direction: column;
-    input {
-      &[name="name"] {
-        margin-right: 0;
-      }
+  display: flex;
+  flex-direction: column;
+  input {
+    &[name="name"] {
+      margin-right: 0;
     }
   }
 `;
@@ -166,8 +165,9 @@ const Contact = () => {
       })
       .catch((err) => console.log(err));
   }
+
   return (
-    <ContactSection id="contact" data-aos="fade-right" data-aos-duration="2200">
+    <ContactSection id="contact">
       <Title>Ponte en contacto:</Title>
       {/* <Text>Lorem ipsum dolor sit amet, consectetur adipisicing.</Text> */}
       <Icons>
@@ -185,47 +185,57 @@ const Contact = () => {
           <img src={WhatsApp} alt="WhatsApp" />
         </a>
       </Icons>
-      <Form onSubmit={sendEmail}>
-        <Row>
-          <label></label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Tu Nombre"
+      <div data-aos="fade-right" data-aos-duration="2200">
+        <Form onSubmit={sendEmail}>
+          <Row>
+            <label></label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Tu Nombre"
+              className="form-control"
+            />
+
+            <label></label>
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Tu Email"
+              className="form-control"
+            />
+          </Row>
+          <textarea
+            placeholder="De manera detallada describe los sucesos y en caso de ser necesario escribe una nota acerca de tu Multa"
+            name="message"
             className="form-control"
           />
 
-          <label></label>
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Tu Email"
-            className="form-control"
-          />
-        </Row>
-        <textarea
-          placeholder="De manera detallada describe los sucesos y en caso de ser necesario escribe una nota acerca de tu Multa"
-          name="message"
-          className="form-control"
-        />
+          <Tittle>Adjunta tu Multa</Tittle>
+          <SubText>
+            No te olvides que la Foto o Scan de tu archivo debe ser clara y
+            nitida
+          </SubText>
+          <GUploader />
+          <SubText>En caso de tener una notificacion subela tambien</SubText>
+          <GUploader />
 
-        <Tittle>Adjunta tu Multa </Tittle>
-        <SubText>
-          No te olvides que la Foto o Scan de tu archivo debe ser clara y nitida
-        </SubText>
-
-        <GUploader />
-
-        <div style={{ margin: "0 auto" }}>
-          <button
-            type="submit"
-            name="Send"
-            className="form-control btn btn-primary"
-          >
-            Enviar!
-          </button>
-        </div>
-      </Form>
+          <div style={{ margin: "0 auto" }}>
+            <button
+              type="submit"
+              name="Send"
+              className="form-control btn btn-primary"
+            >
+              Enviar!
+            </button>
+          </div>
+        </Form>
+      </div>
+      <SubText>
+        Al dar Click en Enviar estas aceptando el{" "}
+        <form action="/Privacy" class="inline">
+          <a href="/Privacy">Aviso de Privacidad</a>
+        </form>
+      </SubText>
     </ContactSection>
   );
 };

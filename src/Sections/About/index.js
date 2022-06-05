@@ -1,7 +1,7 @@
-import React  from 'react';
+import React from "react";
 import styled, { keyframes } from "styled-components";
 import wave from "../../assets/waves.svg";
-import rocket from "../../assets/rocket image.png";
+import rocket from "../../assets/rocket image.svg";
 import human from "../../assets/human.svg";
 import hand from "../../assets/hand.svg";
 
@@ -12,13 +12,9 @@ const move = keyframes`
 `;
 
 const AboutSection = styled.section`
-              overflow-x: hidden;
+  overflow-x: hidden;
 
-
-
-              overflow-y: hidden;
-
-
+  overflow-y: hidden;
 
   width: 100%;
   position: relative;
@@ -96,7 +92,7 @@ const Rocket = styled.div`
 `;
 
 const Human = styled.div`
-  width: 50%;
+  width: 40%;
   position: absolute;
   right: 0;
   bottom: 100%;
@@ -106,7 +102,7 @@ const Human = styled.div`
   }
 `;
 const Text = styled.h4`
-  font-size: calc(0.5rem + 1vw);
+  font-size: calc(0.9rem + 0.9vw);
   line-height: 1.5;
   color: var(--nav2);
 `;
@@ -131,40 +127,39 @@ const About = () => {
   return (
     <AboutSection id="about">
       <Waves src={wave} alt="" />
-      <div data-aos="fade-right"
-     data-aos-duration="2200">
+      <div data-aos="fade-right" data-aos-duration="2200">
         <Hand>
-        <img src={hand} alt="" />
-      </Hand>
-      <Main>
-        <div>
-          <Title>Acerca de Nosotros</Title>
-          <CurvedLine />
-        </div>
-        <Content>
-          <Rocket>
-            <img src={rocket} alt="" width="400" height="400" />
-          </Rocket>
-          <AboutText>
-            <Human>
-              <img src={human} alt="" width="400" height="400" />
-            </Human>
+          <img src={hand} alt="" />
+        </Hand>
+        <Main>
+          <div>
+            <Title>Acerca de Nosotros</Title>
+            <CurvedLine />
+          </div>
+          <Content>
+            <Rocket>
+              <img src={rocket} alt="" width="400" height="400" />
+            </Rocket>
+            <AboutText>
+              <Human>
+                <img src={human} alt="" width="400" height="400" />
+              </Human>
 
-            <Text>
-             Somos una division de el Bufete de Abogados H.E.R.A. ,  principalmente nos dedicamos a la defensa de las multas en Mexico. 
-            </Text>
+              <Text>
+                Somos un grupo de Abogados Fiscalistas e Ingenieros expertos en
+                inteligencia artificial, principalmente nos dedicamos a la
+                defensa fiscal en todo México.
+              </Text>
 
-            <div>
-              <Circle style={{ backgroundColor: "var(--purple)" }} />
-              <Circle style={{ backgroundColor: "var(--pink)" }} />
-              <Circle style={{ backgroundColor: "var(--black)" }} />
-            </div>
-          </AboutText>
-        </Content>
-      </Main>
+              <div>
+                <Circle style={{ backgroundColor: "var(--purple)" }} />
+                <Circle style={{ backgroundColor: "var(--pink)" }} />
+                <Circle style={{ backgroundColor: "var(--black)" }} />
+              </div>
+            </AboutText>
+          </Content>
+        </Main>
       </div>
-  
-
     </AboutSection>
   );
 };

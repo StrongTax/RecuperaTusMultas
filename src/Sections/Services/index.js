@@ -1,11 +1,12 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
-import React  from 'react';
+import React from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Tube from "../../assets/3dtube.png";
-import Cone from "../../assets/3dtriangle.png";
-import Capsule from "../../assets/3dcapsule.png";
+import Tube from "../../assets/tick.svg";
+import Cone from "../../assets/upload.svg";
+import check from "../../assets/check.svg";
+import Capsule from "../../assets/contact.svg";
 
 import TextBlock from "../../components/TextBlock";
 import SvgBlock from "../../components/SvgBlock";
@@ -22,12 +23,47 @@ const ServiceSection = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  padding-top: 25rem;
+  padding-top: 20rem;
+`;
 
+const Subtitle = styled.h3`
+color: #04e824;
+color-text: #04e824; 
+  }
+`;
+
+const Button = styled.button`
+  display: flex;
+  background-color: var(--purple);
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  margin-left: 1rem;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:focus {
+    transform: scale(0.9);
+  }
+  @media only Screen and (max-width: 40em) {
+    font-size: 1.2rem;
+    &:hover {
+      transform: none;
+    }
+    &:focus {
+      transform: none;
+    }
+  }
 `;
 
 const Background = styled.div`
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +86,7 @@ const Title = styled.h1`
   font-size: 2rem;
   margin-top: 4rem;
   position: relative;
-  
+
   &::before {
     content: "";
     height: 1px;
@@ -61,7 +97,6 @@ const Title = styled.h1`
     transform: translate(-50%, 0.5rem);
     /* or 100px */
     border-bottom: 2px solid var(--pink);
-
   }
 `;
 
@@ -86,7 +121,11 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10rem 10rem;
+  text-align: justify;
+  margin-top: 10rem;
+  margin-bottom:-25rem;
+  padding-bottom:15rem;
+
   /* margin-bottom: 10rem; */
   position: relative;
   @media only Screen and (max-width: 64em) {
@@ -119,7 +158,6 @@ const OBJ = styled.div`
   @media only Screen and (max-width: 48em) {
     opacity: 0.5;
     top: 25%;
-
   }
 `;
 
@@ -137,7 +175,7 @@ const Services = () => {
       scrollTrigger: {
         trigger: document.getElementById("services"),
 
-        start: "top top+=180",
+        start: "top top+=80",
 
         end: "bottom bottom",
 
@@ -149,12 +187,12 @@ const Services = () => {
       document.getElementById("line"),
 
       {
-        height: "8rem",
+        height: "10rem",
       },
       {
         height: "1rem",
-        duration: 2,
-        opacity: "60%",
+        duration: 1,
+        opacity: "40%",
         scrollTrigger: {
           trigger: document.getElementById("line"),
           start: "top top+=200",
@@ -177,7 +215,6 @@ const Services = () => {
 
             ease: "power2",
             scrollTrigger: {
-              
               id: `section-${index + 1}`,
               trigger: el,
               start: "top center+=200",
@@ -195,7 +232,6 @@ const Services = () => {
             ease: "power2.inOut",
 
             scrollTrigger: {
-              
               id: `section-${index + 1}`,
               trigger: el.childNodes[1],
               start: "top center",
@@ -303,19 +339,19 @@ const Services = () => {
             }
           )
           .to(
-            el,
-
-            {
-              opacity: 0,
-
-              ease: "power2",
+            el.childNodes[1], {
+              transform: "scale(0)",
+  
+              ease: "power2.inOut",
+  
               scrollTrigger: {
                 id: `section-${index + 1}`,
-                trigger: el,
-                start: "top top+=300",
-                end: "center top+=300",
+                trigger: el.childNodes[1],
+                start: "top center",
+                end: "bottom center",
                 scrub: true,
-              },
+                snap: true,
+              }
             }
           );
       }
@@ -337,14 +373,22 @@ const Services = () => {
 
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Foto!"
-          title={<h1>Envia Tu Multa</h1>}
-          subText={
-            <h5>
-               Toma una foto de tu multa! <br/> Asegurate que se vea clara y nítida, ya que nuestro equipo trabajara con tu archivo.<br/> Envianos tus archivos en la seccion de abajo
-            </h5>
+          topic="Privacidad y Confidencialidad"
+          title={
+            <h4>
+              Consulta y Autoriza nuestro aviso de privacidad y confidencialidad
+            </h4>
           }
-        />
+          subText={
+            <h4>
+              Recupera Tus Multas tiene un gran compromiso <br />
+              con sus Usuarios y su Privacidad
+            </h4>
+          }
+        >
+          <Button> Aviso de Privacidad</Button>
+        </TextBlock>
+
         <OBJ>
           <img src={Tube} alt="Tube Object" width="400" height="400" />
         </OBJ>
@@ -352,12 +396,16 @@ const Services = () => {
       </Content>
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Revisión"
-          title={<h1>Nosotros revisamos tu Multa</h1>}
+          topic="Escaneo"
+          title={<h4>Sube tu multa</h4>}
           subText={
-            <h5>
-              Una vez recibimos tus archivos los analizamos minuciosamente y nos contactaremos contigo para darte una resolución. 
-            </h5>
+            <h4>
+              Escanea en formato PDF Asegúrate que se vea clara y nítida la
+              multa, ya que nuestro equipo trabajará con tu archivo.
+              <br />
+              <br />
+              Si tu multa contiene Citatorio y Notificación, súbelos también.
+            </h4>
           }
         />
         <OBJ>
@@ -365,14 +413,36 @@ const Services = () => {
         </OBJ>
         <SvgBlock svg="Develope.svg" />
       </Content>
+
+      <Content ref={addToRefs}>
+        <TextBlock
+          topic="Revisión"
+          title={<h4>Revisáremos tu Multa!</h4>}
+          subText={
+            <h4>
+              Una vez recibido tu archivo, aprovecháremos nuestro desarrollo
+              tecnologico para analizar tu caso y nos pondremos en contacto
+              contigo para darte una respuesta de cotización.
+            </h4>
+          }
+        />
+        <OBJ>
+          <img src={check} alt="check" width="400" height="400" />
+        </OBJ>
+        <SvgBlock svg="Develope.svg" />
+      </Content>
+
       <Content>
         <TextBlock
           topic="Solucion!"
-          title={<h1>Nos contactaremos contigo!</h1>}
+          title={<h4>Nos contactáremos contigo</h4>}
           subText={
-            <h5>
-              Dependiendo de el tipo de multa y el proceso que es mas eficiente seguir, podremos darte una solucion a tu caso!
-            </h5>
+            <h4>
+              Dependiendo del tipo de multa, te compartiremos el procedimiento a
+              seguir para recuperar tu multa.
+              <br />
+              <Subtitle>Daremos una solución a las multas indebidas.</Subtitle>
+            </h4>
           }
         />
         <OBJ>
