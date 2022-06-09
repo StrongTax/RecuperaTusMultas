@@ -3,6 +3,7 @@ import React from "react";
 import HeroSection from "../Sections/Hero/index";
 import About from "../Sections/About/index";
 import Services from "../Sections/Services/index";
+import Clients from "../components/Clients/index.jsx"
 import Testimonials from "../Sections/Testimonials/index";
 import Contact from "../Sections/Contact/index";
 import BlogPost from "../components/BlogPost/BlogPost.js";
@@ -24,6 +25,7 @@ const Home = () => {
   return (
     <Container>
       <HeroSection />
+      <Clients/>
       <About />
       <BlogPost />
       {/*<Card1/>*/}
