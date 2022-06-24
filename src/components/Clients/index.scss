@@ -4,12 +4,12 @@
     .container {
       .clients-container {
         display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(5, 1fr);
+        gap: 9rem;
+        grid-template-columns: repeat(3, 5fr);
         text-align: center;
         .client {
           img {
-            height: 5rem;
+            height: 9rem;
           }
         }
       }
@@ -18,16 +18,16 @@
       padding: rem 2rem 2rem 2rem;
       .container {
         .clients-container {
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(2, 5fr);
           text-align: left;
-          gap: 1rem;
+          gap: 2rem;
   
           .client {
             &:nth-of-type(5) {
               display: none;
             }
             img {
-              height: 3rem;
+              height: 5rem;
             }
           }
         }

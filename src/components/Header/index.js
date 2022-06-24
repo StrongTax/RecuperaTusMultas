@@ -73,7 +73,8 @@ const Nav = styled.nav`
 
 const Button = styled.button`
   background-color: var(--purple);
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 900;
   padding: 0.7rem 1rem;
   margin-left: 1rem;
   border-radius: 2rem;
@@ -87,7 +88,7 @@ const Button = styled.button`
     transform: scale(0.9);
   }
   @media only Screen and (max-width: 40em) {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     &:hover {
       transform: none;
     }
